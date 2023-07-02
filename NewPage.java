@@ -30,8 +30,13 @@ public class NewPage extends JFrame implements ActionListener {
         delete.setBounds(180, 220, 120,30);
         delete.addActionListener(this);
         add(delete);
+         
+        view = new JButton("View Book");
+        view.setBounds(180, 290, 120,30);
+        view.addActionListener(this);
+        add(view);
          logout = new JButton("Logout");
-        logout.setBounds(180, 290, 120,30);
+        logout.setBounds(180, 360, 120,30);
         logout.addActionListener(this);
         add(logout);
 
@@ -53,6 +58,11 @@ public class NewPage extends JFrame implements ActionListener {
         else if(e.getSource()==delete)
         {
             new Delete();
+            setVisible(false);
+        }
+        else if(e.getSource()==view)
+        {
+            new ViewBook();
             setVisible(false);
         }
         else if(e.getSource()== logout)
